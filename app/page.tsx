@@ -318,7 +318,7 @@ export default function VocaForge() {
         {/* ── Progress ── */}
         {status !== "idle" && (
           <div className="status-area">
-            {status !== "idle" && status !== "error" && (
+            {(status === "analyzing" || status === "generating" || status === "done") && (
               <div className="progress-bar">
                 <div className="progress-fill" style={{ width: `${progress}%` }} />
               </div>
